@@ -1,6 +1,6 @@
 let table = $("table tr");
 
-// player set up"
+
 let player1 = {
   name: "",
   score: 0
@@ -30,7 +30,7 @@ let activePlayer = 1;
 let activeName = player1 || player1Default;
 let activeColor = player1Color;
 
-// Game Mechanics
+
 $(document).ready(function() {
   $(".player1").text(`${player1.name} score: ${player1.score}`);
   $(".player2").text(`${player2.name} score: ${player2.score}`);
@@ -46,7 +46,7 @@ $(document).ready(function() {
     let bottomOpen = reviewBottom(col);
     switchColor(bottomOpen, col, activeColor);
 
-    // calling winning conditions
+
     if (
       horizontalWinCondition() ||
       verticalWinCondition() ||
@@ -81,7 +81,7 @@ let showWin = (rowNum, colNum) => {
   console.log(colNum);
 };
 
-// Color Assignments
+
 function switchColor(rowIndex, colIndex, color) {
   return table
     .eq(rowIndex)
@@ -120,7 +120,7 @@ function reviewColorMatch(one, two, three, four) {
   );
 }
 
-// Win Conditions Logic
+
 function horizontalWinCondition() {
   for (let row = 0; row < 6; row++) {
     for (let col = 0; col < 4; col++) {
@@ -195,7 +195,7 @@ function diagonalWinCondition() {
   }
 }
 
-// Game Ending Mechanic
+
 function gameEnd(winningPlayer) {
   for (let col = 0; col < 7; col++) {
     for (let row = 0; row < 7; row++) {
